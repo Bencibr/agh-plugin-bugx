@@ -1,0 +1,77 @@
+{
+  "name": "@bencibr/bugx",
+  "version": "0.1.4",
+  "license": "MIT",
+  "description": "BugX code review and vulnerability detection engine for Agnes Harness.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bencibr/agh-plugin-bugx"
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "agh.market.json",
+    "skills",
+    "assets"
+  ],
+  "engines": {
+    "agh": ">=1.0.0"
+  },
+  "agnes": {
+    "provides": [
+      "skills",
+      "bundle"
+    ],
+    "metadata": {
+      "displayName": "BugX",
+      "summary": "Autonomous code review and testing agent.",
+      "description": "Autonomous code review and testing agent.",
+      "locales": {
+        "zh-CN": {
+          "displayName": "BugX",
+          "summary": "自主代码审查与自主测试智能体",
+          "description": "BugX 是一个具备自主代码审查与测试能力的智能体，用于代码审查、漏洞挖掘与测试验证。"
+        }
+      }
+    },
+    "contributions": [
+      {
+        "kind": "skill",
+        "id": "@bencibr/bugx",
+        "path": "./skills/bugx/SKILL.md"
+      }
+    ],
+    "bundles": {
+      "audit": {
+        "profile": {
+          "skills": [
+            "bugx"
+          ],
+          "toolPolicy": {
+            "readOnly": false
+          }
+        },
+        "presets": {
+          "bugx": {
+            "name": "bugx",
+            "extends": "standard"
+          }
+        },
+        "launch": {
+          "title": {
+            "en": "BugX Code Review",
+            "zh-CN": "BugX 自主代码审查"
+          },
+          "preset": "bugx",
+          "prompt": {
+            "mode": "draft",
+            "text": {
+              "en": " Perform code audit and bug hunting.",
+              "zh-CN": " 对当前项目执行代码审查与缺陷挖掘。"
+            }
+          }
+        }
+      }
+    }
+  }
+}

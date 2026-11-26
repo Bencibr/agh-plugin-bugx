@@ -1,6 +1,6 @@
 {
   "name": "@bencibr/bugx",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "license": "MIT",
   "description": "BugX code review and vulnerability detection engine for Agnes Harness.",
   "repository": {
